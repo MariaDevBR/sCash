@@ -241,6 +241,9 @@ public class CashCommand implements CommandExecutor {
 
 			double amountTotal = amount * quantity;
 
+			if (cashMethods.hasNumber(s, amount) || cashMethods.hasNumber(s, quantity))
+				return true;
+
 			cashVoucherManager.giveVoucherCash(target, amount, quantity);
 			cashMethods.giveVoucherCash(s, target, amountTotal, quantity);
 			return true;

@@ -41,7 +41,7 @@ public class CashMethods {
 	}
 
 	public boolean hasNumber(CommandSender p, double amount) {
-		if (amount <= 0) {
+		if (amount < 1) {
 			main.sendMessage(p, messages.getInvalidNumber());
 			main.sendSound(p, sounds.getInvalidNumber());
 			return true;
