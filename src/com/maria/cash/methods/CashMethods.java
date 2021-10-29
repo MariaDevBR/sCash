@@ -117,7 +117,7 @@ public class CashMethods {
 	}
 
 	public void commandIncorrect(CommandSender p) {
-		if (main.hasPermission(p, "admin"))
+		if (!p.hasPermission("scash.admin"))
 			for (String message : messages.getCommands())
 				p.sendMessage(message);
 
