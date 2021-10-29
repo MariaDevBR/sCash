@@ -1,0 +1,41 @@
+Nome menu: '&8Shop - Categorias'
+Tamanho menu: 3
+
+Categorias:
+  categoria1:
+    Titulo: '&8Categoria - Limites'
+    Tamanho: 3
+    Nome: '&6&lLIMITES'
+    Lore:
+      - ''
+      - '&7Aqui você encontrará'
+      - '&fLimites &7de compra.'
+      - ''
+      - '&8* &aClique para abrir o menu'
+      - ''
+    Custom skull: false # Caso false, sera utilizado o item do "Material"
+    Skull: ''
+    Material: 'PAPER:0'
+    Slot: 11
+    Permissao: 'scash.ver.categoria1' # Permissao para ver a categoria
+    Comando: 'nulo' # Deixe nulo caso nao va utilizar outra loja
+    Glow: true
+  categoria2:
+    Titulo: '&8Categoria - Combustíveis'
+    Tamanho: 3
+    Nome: '&8&lCOMBUSTÍVEIS'
+    Lore:
+      - ''
+      - '&7Aqui você encontrará'
+      - '&fCombustíveis &7melhores'
+      - '&7do que os normais.'
+      - ''
+      - '&8* &aClique para abrir o menu'
+      - ''
+    Custom skull: true
+    Skull: 'http://textures.minecraft.net/texture/d7f5766d2928dc0df1b3404c3bd073c9476d26c80573b0332e7cce73df15482a'
+    Material: 'COAL:0'
+    Slot: 12
+    Permissao: 'scash.ver.categoria2'
+    Comando: 'nulo'
+    Glow: true

@@ -1,0 +1,32 @@
+# Caso nao queira "Sons", desative-os na [config.yml]
+
+Sem permissao: 'VILLAGER_NO'
+Comando incorreto: 'VILLAGER_NO'
+
+Saldo: 'ORB_PICKUP'
+Saldo outros: 'ORB_PICKUP'
+
+Player invalido: 'NOTE_PLING'
+Numero invalido: 'NOTE_PLING'
+Cash insuficiente: 'VILLAGER_NO'
+Pouco cash: 'VILLAGER_NO'
+
+Cash enviado: 'LEVEL_UP'
+Cash recebido: 'LEVEL_UP'
+
+Cash adicionado: 'LEVEL_UP'
+Cash removido: 'ORB_PICKUP'
+Cash setado: 'LEVEL_UP'
+
+Vale: 'LEVEL_UP'
+Vale givado: 'ORB_PICKUP'
+
+Stack vales: 'LEVEL_UP'
+Vale ativado: 'LEVEL_UP'
+
+Enviar vale: 'ORB_PICKUP'
+Acao cancelada: 'NOTE_PLING'
+Vale enviado: 'LEVEL_UP'
+
+Categoria selecionada: 'CLICK'
+Item comprado: 'ORB_PICKUP'

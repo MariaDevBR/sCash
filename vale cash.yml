@@ -1,0 +1,18 @@
+# Voce pode desativar algumas funçoes do Vale Cash na [config.yml]
+
+Vale cash:
+  Item:
+    Nome: '&6&lVALE CASH'
+    Lore:
+      - ''
+      - '&7Ative este item'
+      - '&7para receber'
+      - '&6✪{quantia} &7de &fCash&7.'
+      - ''
+      - '&8* &aBotão esquerdo &fEnvie &apara alguém'
+      - '&8* &aBotão direito &fAtive'
+      - ''
+    Custom skull: true # Caso false, sera utilizado o item configurado em "Material"
+    Skull: 'http://textures.minecraft.net/texture/b0a7b94c4e581b699159d48846ec091392506237c89a97c93248a0d8abc916d5'
+    Material: 'PAPER:0' # Material : Data
+    Glow: true

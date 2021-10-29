@@ -1,0 +1,22 @@
+# Caso nao queira o menu, voce pode desativa-lo na [config.yml]
+
+Nome menu: '&8Selecionar Jogador'
+Tamanho menu: 3 # Quantia de Hots
+
+Menu:
+  Item:
+    Enviar vale:
+      Nome: '&6&lENVIAR VALE'
+      Lore:
+        - ''
+        - '&7Clique para &fenviar'
+        - '&7seu &eVale Cash'
+        - '&7para outro jogador.'
+        - ''
+        - '&fQuantia: &6✪{cash}'
+        - ''
+      Custom skull: true # Caso false, sera utilizado o item configurado em "Material"
+      Skull: 'http://textures.minecraft.net/texture/8381c529d52e03cd74c3bf38bb6ba3fde1337ae9bf50332faa889e0a28e8081f'
+      Material: 'CHEST:0'
+      Slot: 13
+      Glow: true

@@ -1,0 +1,97 @@
+Itens:
+  item1:
+    Categoria: 'categoria1'
+    Nome: '&6&lLOOTING'
+    Lore:
+      - ''
+      - '&7Ao comprar este item'
+      - '&7você receberá &f1 &7item'
+      - '&7com &e10 &fNíveis'
+      - '&7de Looting.'
+      - ''
+      - '&fValor: &6✪{cash}'
+      - ''
+      - '&8* &aClique para comprar'
+      - ''
+    Valor: 100
+    Custom skull: true
+    Skull: 'http://textures.minecraft.net/texture/fc02695cb3fc5e3b81138a0f06a8881ac32c6fc623c78d855ff7855fc69614ee'
+    Material: 'BOOK:0'
+    Slot: 11
+    Glow: true
+    Anunciar compra: true
+    Tipo anuncio:
+      Chat: true
+      ActionBar: true
+    Anuncio chat:
+      - ''
+      - '&6&lCASH &8» &fO jogador &e{player} &facaba de comprar &6&lLooting 10 &fno &7/shop&f!'
+      - ''
+    Anuncio actionbar: '&6&lCASH &8» &fO jogador &e{player} &fcomprou um item no &e/shop'
+    Comandos: # Comandos que irao executar quando o player comprar [Coloque quantos quiser]
+      - 'looting give {player} 10'
+  item2:
+    Categoria: 'categoria1'
+    Nome: '&6&lLOOTING'
+    Lore:
+      - ''
+      - '&7Ao comprar este item'
+      - '&7você receberá &f1 &7item'
+      - '&7com &e15 &fNíveis'
+      - '&7de Looting.'
+      - ''
+      - '&fValor: &6✪{cash}'
+      - ''
+      - '&8* &aClique para comprar'
+      - ''
+    Valor: 50E3
+    Custom skull: true
+    Skull: 'http://textures.minecraft.net/texture/fc02695cb3fc5e3b81138a0f06a8881ac32c6fc623c78d855ff7855fc69614ee'
+    Material: 'BOOK:0'
+    Slot: 12
+    Glow: true
+    Anunciar compra: true
+    Tipo anuncio:
+      Chat: true
+      ActionBar: false
+    Anuncio chat:
+      - ''
+      - '&6&lCASH &8» &fO jogador &e{player} &facaba de comprar &6&lLooting 15 &fno &7/shop&f!'
+      - ''
+    Anuncio actionbar: '&6&lCASH &8» &fO jogador &e{player} &fcomprou um item no &e/shop'
+    Comandos:
+      - 'looting give {player} 10'
+      - 'looting give {player} 5'
+  item3:
+    Categoria: 'categoria2'
+    Nome: '&6&lLOOTING'
+    Lore:
+      - ''
+      - '&7Ao comprar este item'
+      - '&7você receberá &f1 &7item'
+      - '&7com &e1M &fNíveis'
+      - '&7de Looting.'
+      - ''
+      - '&fValor: &6✪{cash}'
+      - ''
+      - '&8* &aClique para comprar'
+      - ''
+    Valor: 1E6
+    Custom skull: false
+    Skull: 'http://textures.minecraft.net/texture/fc02695cb3fc5e3b81138a0f06a8881ac32c6fc623c78d855ff7855fc69614ee'
+    Material: 'BOOK:0'
+    Slot: 11
+    Glow: true
+    Anunciar compra: true
+    Tipo anuncio:
+      Chat: false
+      ActionBar: true
+    Anuncio chat:
+      - ''
+      - '&6&lCASH &8» &fO jogador &e{player} &facaba de comprar &6&lLooting 1M &fno &7/shop&f!'
+      - ''
+    Anuncio actionbar: '&6&lCASH &8» &fO jogador &e{player} &fcomprou um item no &e/shop'
+    Comandos:
+      - 'looting give {player} 500E3'
+      - 'looting give {player} 250E3'
+      - 'looting give {player} 250E3'

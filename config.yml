@@ -1,0 +1,22 @@
+# Qualquer bug, chame a Desenvolvedora no Discord
+# Discord: Maria_BR#4870
+#
+# Para receber suporte e retirar dúvidas sobre este plugin, entre em meu Discord
+# Discord: https://discord.gg/rBDYYbg9pb
+
+Prefix ativar: true
+Prefix: '&6&lCASH &8»'
+
+Sons ativar: true
+
+Comando shop: '/shop'
+Aliases shop:
+  - '/lojacash'
+  - '/cashshop'
+  - '/loja cash'
+
+Cash inicial: 10.0 # Caso nao queira, coloque 0.0
+
+Vale cash:
+  Botao esquerdo: true # Coloque false, caso nao queria o sistema de enviar o Vale para outra pessoa
+  Menu enviar: true
