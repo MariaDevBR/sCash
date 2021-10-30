@@ -51,7 +51,7 @@ public class ActivateCashVoucherManager {
 		cashAPI.addCash(p, amount);
 
 		for (String activateVoucher : messages.getActivateVoucherCash())
-			p.sendMessage(activateVoucher.replace("{quantia}", Format.format(amount)));
+			p.sendMessage(activateVoucher.replace("{quantia}", Format.formatNumber(amount)));
 
 		main.sendSound(p, sounds.getActivateVoucherCash());
 	}

@@ -19,3 +19,31 @@ Cash inicial: 10.0 # Caso nao queira, coloque 0.0
 
 Vale cash:
   Botao esquerdo: true # Coloque false, caso nao queria o sistema de enviar o Vale para outra pessoa
+  
+Formatacao: # Altere e adicione quantas formataçoes quiser
+  - '' # Deixe vazio
+  - 'K'
+  - 'M'
+  - 'B'
+  - 'T'
+  - 'Q'
+  - 'QQ'
+  - 'S'
+  - 'SS'
+  - 'OC'
+  - 'N'
+  - 'D'
+  - 'UN'
+  - 'DD'
+  - 'TR'
+  - 'QR'
+  - 'QD'
+  - 'SD'
+  - 'SPD'
+  - 'OD'
+  - 'ND'
+  - 'VG'
+  - 'UVG'
+  - 'DVG'
+  - 'TVG'
+  - 'QTV'

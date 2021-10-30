@@ -55,7 +55,7 @@ public class InventorySendVoucher {
 		String skull = sendCashVoucher.getSkull();
 		String name = sendCashVoucher.getName();
 		List<String> lore = sendCashVoucher.getLore();
-		lore = lore.stream().map(l -> l.replace("{cash}", Format.format(cash))).collect(Collectors.toList());
+		lore = lore.stream().map(l -> l.replace("{cash}", Format.formatNumber(cash))).collect(Collectors.toList());
 
 		Material material = sendCashVoucher.getMaterial();
 		int data = sendCashVoucher.getData();

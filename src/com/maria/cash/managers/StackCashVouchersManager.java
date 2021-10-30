@@ -52,7 +52,7 @@ public class StackCashVouchersManager {
 		cashVoucherManager.giveVoucherCash(p, cash, 1);
 
 		for (String stackVouchers : messages.getStackVouchersCash())
-			p.sendMessage(stackVouchers.replace("{quantia}", Format.format(cash)));
+			p.sendMessage(stackVouchers.replace("{quantia}", Format.formatNumber(cash)));
 
 		main.sendSound(p, sounds.getStackVoucherCash());
 	}

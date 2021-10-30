@@ -35,7 +35,7 @@ public class CashPlaceHolder extends PlaceholderExpansion {
 	public String onPlaceholderRequest(Player p, @NotNull String params) {
 		if (params.equalsIgnoreCase("amount")) {
 			double cash = main.getCashAPI().getCash(p);
-			String cashFormatted = Format.format(cash);
+			String cashFormatted = Format.formatNumber(cash);
 
 			return cashFormatted;
 

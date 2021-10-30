@@ -54,7 +54,7 @@ public class ShopItemsManager {
 			double price = key.getDouble("Valor");
 
 			List<String> lore = key.getStringList("Lore");
-			lore = lore.stream().map(l -> l.replace("&", "§").replace("{cash}", Format.format(price)))
+			lore = lore.stream().map(l -> l.replace("&", "§").replace("{cash}", Format.formatNumber(price)))
 					.collect(Collectors.toList());
 			List<String> commands = key.getStringList("Comandos");
 			commands = commands.stream().map(c -> c.replace("&", "§")).collect(Collectors.toList());

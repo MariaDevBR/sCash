@@ -35,7 +35,7 @@ public class CashVoucherManager {
 		String name = voucherCash.getName();
 		String skull = voucherCash.getSkull();
 		List<String> lore = voucherCash.getLore();
-		lore = lore.stream().map(l -> l.replace("{quantia}", Format.format(value))).collect(Collectors.toList());
+		lore = lore.stream().map(l -> l.replace("{quantia}", Format.formatNumber(value))).collect(Collectors.toList());
 
 		Material material = voucherCash.getMaterial();
 		int data = voucherCash.getData();

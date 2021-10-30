@@ -30,7 +30,7 @@ public class SendVoucherManager {
 
 		List<String> message = messages.getSendVoucher();
 
-		message.forEach(msg -> p.sendMessage(msg.replace("{cash}", Format.format(cash))));
+		message.forEach(msg -> p.sendMessage(msg.replace("{cash}", Format.formatNumber(cash))));
 		main.sendSound(p, sounds.getSendVoucher());
 
 		p.closeInventory();
@@ -61,10 +61,10 @@ public class SendVoucherManager {
 		List<String> messageSended = messages.getVoucherSended();
 		List<String> messageReceived = messages.getVoucherReceived();
 
-		messageSended.forEach(msg -> p
-				.sendMessage(msg.replace("{quantia}", Format.format(amount)).replace("{player}", target.getName())));
+		messageSended.forEach(msg -> p.sendMessage(
+				msg.replace("{quantia}", Format.formatNumber(amount)).replace("{player}", target.getName())));
 		messageReceived.forEach(msg -> target
-				.sendMessage(msg.replace("{quantia}", Format.format(amount)).replace("{player}", p.getName())));
+				.sendMessage(msg.replace("{quantia}", Format.formatNumber(amount)).replace("{player}", p.getName())));
 
 		main.sendSound(p, sounds.getVoucherSended());
 		main.sendSound(target, sounds.getReceivedCash());

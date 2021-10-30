@@ -107,13 +107,24 @@ public class CashMethods {
 		double cash = cashAPI.getCash(player);
 
 		if (!cashAPI.hasCash(player, amount)) {
-			main.sendMessage(player, messages.getCashInsufficient().replace("{necessario}", Format.format(amount))
-					.replace("{cash}", Format.format(cash)));
+			main.sendMessage(player, messages.getCashInsufficient().replace("{necessario}", Format.formatNumber(amount))
+					.replace("{cash}", Format.formatNumber(cash)));
 			main.sendSound(player, sounds.getCashInsufficient());
 			return false;
 
 		}
 		return true;
+	}
+
+	public double parseDouble(CommandSender player, String[] a, int arg, double amount) {
+		try {
+			amount = Format.parseString(a[arg]);
+			return amount;
+
+		} catch (Exception e) {
+			return 0.0;
+		}
+
 	}
 
 	public void commandIncorrect(CommandSender p) {
@@ -131,7 +142,7 @@ public class CashMethods {
 	public void viewCash(Player player, double cash) {
 		List<String> balance = messages.getBalance();
 
-		balance.forEach(msg -> player.sendMessage(msg.replace("{cash}", Format.format(cash))));
+		balance.forEach(msg -> player.sendMessage(msg.replace("{cash}", Format.formatNumber(cash))));
 		main.sendSound(player, sounds.getBalance());
 	}
 
@@ -139,7 +150,7 @@ public class CashMethods {
 		List<String> othersBalance = messages.getOthersBalance();
 
 		othersBalance.forEach(msg -> player
-				.sendMessage(msg.replace("{cash}", Format.format(cash)).replace("{player}", target.getName())));
+				.sendMessage(msg.replace("{cash}", Format.formatNumber(cash)).replace("{player}", target.getName())));
 
 		main.sendSound(player, sounds.getOthersBalance());
 	}
@@ -148,11 +159,11 @@ public class CashMethods {
 		List<String> sendCash = messages.getSendCash();
 		List<String> receivedCash = messages.getReceivedCash();
 
-		sendCash.forEach(msg -> player
-				.sendMessage(msg.replace("{quantia}", Format.format(amount)).replace("{player}", target.getName())));
+		sendCash.forEach(msg -> player.sendMessage(
+				msg.replace("{quantia}", Format.formatNumber(amount)).replace("{player}", target.getName())));
 
-		receivedCash.forEach(msg -> target
-				.sendMessage(msg.replace("{quantia}", Format.format(amount)).replace("{player}", player.getName())));
+		receivedCash.forEach(msg -> target.sendMessage(
+				msg.replace("{quantia}", Format.formatNumber(amount)).replace("{player}", player.getName())));
 
 		main.sendSound(player, sounds.getSendCash());
 		main.sendSound(target, sounds.getReceivedCash());
@@ -161,8 +172,8 @@ public class CashMethods {
 	public void voucherCash(Player player, double amount, int quantity) {
 		List<String> voucher = messages.getVoucher();
 
-		voucher.forEach(msg -> player.sendMessage(
-				msg.replace("{cash}", Format.format(amount)).replace("{quantia}", Format.format(quantity))));
+		voucher.forEach(msg -> player.sendMessage(msg.replace("{cash}", Format.formatNumber(amount))
+				.replace("{quantia}", Format.formatNumber(quantity))));
 
 		main.sendSound(player, sounds.getVoucher());
 	}
@@ -170,8 +181,8 @@ public class CashMethods {
 	public void giveVoucherCash(CommandSender sender, Player target, double amount, int quantity) {
 		String voucher = messages.getGiveVoucher();
 
-		main.sendMessage(sender, voucher.replace("{cash}", Format.format(amount))
-				.replace("{quantia}", Format.format(quantity)).replace("{player}", target.getName()));
+		main.sendMessage(sender, voucher.replace("{cash}", Format.formatNumber(amount))
+				.replace("{quantia}", Format.formatNumber(quantity)).replace("{player}", target.getName()));
 
 		main.sendSound(sender, sounds.getGiveVoucher());
 	}

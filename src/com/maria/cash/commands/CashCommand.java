@@ -92,10 +92,7 @@ public class CashCommand implements CommandExecutor {
 			if (cashMethods.isPlayer(p, target))
 				return true;
 
-			if (!cashMethods.isNumber(p, a, 2))
-				return true;
-
-			amount = Double.parseDouble(a[2]);
+			amount = cashMethods.parseDouble(p, a, 2, amount);
 			if (cashMethods.amountIsZero(p, amount))
 				return true;
 
@@ -120,10 +117,10 @@ public class CashCommand implements CommandExecutor {
 			if (main.hasPermission(p, "valecash"))
 				return true;
 
-			if (!cashMethods.isNumber(p, a, 1) || !cashMethods.isNumber(p, a, 2))
+			if (!cashMethods.isNumber(p, a, 2))
 				return true;
 
-			amount = Double.parseDouble(a[1]);
+			amount = cashMethods.parseDouble(p, a, 1, amount);
 			int quantity = Integer.parseInt(a[2]);
 
 			double amountTotal = amount * quantity;
@@ -149,17 +146,14 @@ public class CashCommand implements CommandExecutor {
 			if (cashMethods.hasPlayer(s, target))
 				return true;
 
-			if (!cashMethods.isNumber(s, a, 2))
-				return true;
-
-			amount = Double.parseDouble(a[2]);
+			amount = cashMethods.parseDouble(s, a, 2, amount);
 
 			if (cashMethods.amountIsZero(s, amount))
 				return true;
 
 			cashAPI.addCash(target, amount);
-			main.sendMessage(s, messages.getAddCash().replace("{quantia}", Format.format(amount)).replace("{player}",
-					target.getName()));
+			main.sendMessage(s, messages.getAddCash().replace("{quantia}", Format.formatNumber(amount))
+					.replace("{player}", target.getName()));
 			main.sendSound(s, sounds.getAddCash());
 			return true;
 
@@ -176,10 +170,7 @@ public class CashCommand implements CommandExecutor {
 			if (cashMethods.hasPlayer(s, target))
 				return true;
 
-			if (!cashMethods.isNumber(s, a, 2))
-				return true;
-
-			amount = Double.parseDouble(a[2]);
+			amount = cashMethods.parseDouble(s, a, 2, amount);
 
 			if (cashMethods.amountIsZero(s, amount))
 				return true;
@@ -189,8 +180,8 @@ public class CashCommand implements CommandExecutor {
 				return true;
 
 			cashAPI.removeCash(target, amount);
-			main.sendMessage(s, messages.getRemoveCash().replace("{quantia}", Format.format(amount)).replace("{player}",
-					target.getName()));
+			main.sendMessage(s, messages.getRemoveCash().replace("{quantia}", Format.formatNumber(amount))
+					.replace("{player}", target.getName()));
 			main.sendSound(s, sounds.getRemoveCash());
 			return true;
 
@@ -206,17 +197,14 @@ public class CashCommand implements CommandExecutor {
 			if (cashMethods.hasPlayer(s, target))
 				return true;
 
-			if (!cashMethods.isNumber(s, a, 2))
-				return true;
-
-			amount = Double.parseDouble(a[2]);
+			amount = cashMethods.parseDouble(s, a, 2, amount);
 
 			if (cashMethods.amountIsZero(s, amount))
 				return true;
 
 			cashAPI.setCash(target, amount);
-			main.sendMessage(s, messages.getSetCash().replace("{quantia}", Format.format(amount)).replace("{player}",
-					target.getName()));
+			main.sendMessage(s, messages.getSetCash().replace("{quantia}", Format.formatNumber(amount))
+					.replace("{player}", target.getName()));
 			main.sendSound(s, sounds.getSetCash());
 			return true;
 
@@ -236,7 +224,7 @@ public class CashCommand implements CommandExecutor {
 			if (!cashMethods.isNumber(s, a, 2) || !cashMethods.isNumber(s, a, 3))
 				return true;
 
-			amount = Double.parseDouble(a[2]);
+			amount = cashMethods.parseDouble(s, a, 2, amount);
 			int quantity = Integer.parseInt(a[3]);
 
 			double amountTotal = amount * quantity;
