@@ -33,11 +33,12 @@ public class SQLite {
 		String url = "jdbc:sqlite:" + file;
 
 		try {
+			Class.forName("org.sqlite.JDBC");
 			connection = DriverManager.getConnection(url);
 
 			Bukkit.getConsoleSender().sendMessage("§6[sCash] §fConexão com §6SQLite §faberta com sucesso");
 
-		} catch (SQLException e) {
+		} catch (SQLException | ClassNotFoundException e) {
 			Bukkit.getConsoleSender()
 					.sendMessage("§6[sCash] §cOcorreu um erro ao tentar fazer conexão com §6SQLite§c. Erro:");
 			e.printStackTrace();

@@ -1,5 +1,5 @@
 name: sCash
-version: 1.0.1
+version: 1.0.2
 main: com.maria.cash.Main
 author: [Maria_BR]
 commands:
