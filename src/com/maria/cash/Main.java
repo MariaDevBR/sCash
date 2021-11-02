@@ -25,6 +25,7 @@ import com.maria.cash.listeners.MenuSendVoucherEvent;
 import com.maria.cash.listeners.PlayerEvents;
 import com.maria.cash.listeners.SendVoucherEvent;
 import com.maria.cash.listeners.ShopCommandEvent;
+import com.maria.cash.listeners.UpdateEvent;
 import com.maria.cash.managers.ActivateCashVoucherManager;
 import com.maria.cash.managers.CashVoucherManager;
 import com.maria.cash.managers.StackCashVouchersManager;
@@ -42,11 +43,14 @@ import com.maria.cash.services.placeholder.registry.PlaceHolderRegistry;
 import com.maria.cash.shop.CategoryManager;
 import com.maria.cash.shop.ShopItemsManager;
 import com.maria.cash.utils.DateManager;
+import com.maria.cash.utils.checkers.UpdateCheck;
 
 public class Main extends JavaPlugin {
 
 	private SQLite sqlite;
 	private CashAPI cashAPI;
+
+	private UpdateCheck updateCheck;
 
 	private CashVoucherFile cashVoucherFile;
 	private MessagesFile messagesFile;
@@ -88,6 +92,7 @@ public class Main extends JavaPlugin {
 		registerObjects();
 		registerFunctions();
 		loadPlaceholders();
+		checkUpdate();
 	}
 
 	@Override
@@ -166,12 +171,36 @@ public class Main extends JavaPlugin {
 		new PlaceHolderRegistry(this).register();
 	}
 
+	@SuppressWarnings("deprecation")
+	private void checkUpdate() {
+		updateCheck = new UpdateCheck(this, 97248);
+		if (updateCheck.getUpdateCheckerResult().equals(UpdateCheck.UpdateCheckerResult.OUT_DATED)) {
+			updateCheck.messageOutOfDated(Bukkit.getConsoleSender());
+			new UpdateEvent(this);
+
+		} else
+			Bukkit.getConsoleSender()
+					.sendMessage("§6[" + getDescription().getName() + "] §fNão há nenhuma atualização no momento.");
+
+		Bukkit.getScheduler().scheduleAsyncRepeatingTask(this, () -> {
+			if (updateCheck.getUpdateCheckerResult().equals(UpdateCheck.UpdateCheckerResult.OUT_DATED)) {
+				updateCheck.messageOutOfDated(Bukkit.getConsoleSender());
+
+			}
+		}, 288000, 288000);
+
+	}
+
 	public SQLite getSQLite() {
 		return sqlite;
 	}
 
 	public CashAPI getCashAPI() {
 		return cashAPI;
+	}
+
+	public UpdateCheck getUpdateCheck() {
+		return updateCheck;
 	}
 
 	public CashVoucherFile getCashVoucherFile() {

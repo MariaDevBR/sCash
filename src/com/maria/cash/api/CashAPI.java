@@ -36,6 +36,21 @@ public class CashAPI {
 		return false;
 	}
 
+	public boolean hasAccountByName(String playerName) {
+		try {
+			PreparedStatement preparedStatement = sql.getConnection()
+					.prepareStatement("SELECT * FROM scash WHERE player='" + playerName + "'");
+			ResultSet resultSet = preparedStatement.executeQuery();
+
+			return resultSet.next();
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+
+		}
+		return false;
+	}
+
 	public double addCash(Player p, double value) {
 		if (hasAccount(p)) {
 			double cash = getCash(p);
@@ -46,6 +61,17 @@ public class CashAPI {
 		} else {
 			sql.createAccount(p);
 			addCash(p, value);
+
+		}
+		return value;
+	}
+
+	public double addCashByName(String playerName, double value) {
+		if (hasAccountByName(playerName)) {
+			double cash = getCashByName(playerName);
+			double cashTotal = value + cash;
+
+			sql.executeQuery("UPDATE scash SET cash=" + cashTotal + " WHERE player='" + playerName + "'");
 
 		}
 		return value;
@@ -64,11 +90,31 @@ public class CashAPI {
 
 			} catch (SQLException e) {
 				e.printStackTrace();
-				
+
 			}
 		} else
 			sql.createAccount(p);
 
+		return cash;
+	}
+
+	public double getCashByName(String playerName) {
+		double cash = 0.0;
+
+		if (hasAccountByName(playerName)) {
+			try {
+				PreparedStatement preparedStatement = sql.getConnection()
+						.prepareStatement("SELECT cash FROM scash WHERE player='" + playerName + "'");
+				ResultSet resultSet = preparedStatement.executeQuery();
+
+				cash = resultSet.getDouble("cash");
+
+			} catch (SQLException e) {
+				e.printStackTrace();
+
+			}
+
+		}
 		return cash;
 	}
 
@@ -82,6 +128,17 @@ public class CashAPI {
 		} else {
 			sql.createAccount(p);
 			setCash(p, value);
+
+		}
+		return value;
+	}
+
+	public double setCashByName(String playerName, double value) {
+		if (hasAccountByName(playerName)) {
+			double cash = getCashByName(playerName);
+			cash = value;
+
+			sql.executeQuery("UPDATE scash SET cash=" + cash + " WHERE player='" + playerName + "'");
 
 		}
 		return value;
@@ -102,8 +159,26 @@ public class CashAPI {
 		return value;
 	}
 
+	public double removeCashByName(String playerName, double value) {
+		if (hasAccountByName(playerName)) {
+			double cash = getCashByName(playerName);
+			double cashFinal = cash - value;
+
+			sql.executeQuery("UPDATE scash SET cash=" + cashFinal + " WHERE player='" + playerName + "'");
+
+		}
+		return value;
+	}
+
 	public boolean hasCash(Player p, double amount) {
 		if (getCash(p) >= amount)
+			return true;
+
+		return false;
+	}
+
+	public boolean hasCashByName(String playerName, double amount) {
+		if (getCashByName(playerName) >= amount)
 			return true;
 
 		return false;
