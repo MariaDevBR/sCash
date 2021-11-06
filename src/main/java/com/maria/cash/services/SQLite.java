@@ -79,7 +79,7 @@ public class SQLite {
     public void createAccount(Player p) {
         double startCash = cashSettings.getStartCash();
         try {
-            PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO scash (player, uuid, cash)VALUES(?,?)");
+            PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO scash (player, cash)VALUES(?,?)");
             preparedStatement.setString(1, p.getName());
             preparedStatement.setDouble(2, startCash);
 
