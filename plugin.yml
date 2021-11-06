@@ -1,8 +1,0 @@
-name: sCash
-version: 1.0.3
-main: com.maria.cash.Main
-author: [Maria_BR]
-commands:
-  cash:
-    aliases: [points, cashs, pontos, moeda]
-  scashbymaria:

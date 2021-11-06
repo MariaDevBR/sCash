@@ -1,0 +1,109 @@
+# Configure o "Prefix" na [config.yml]
+
+Sem permissao: '&cVocê não tem permissão para isto.'
+
+Saldo:
+  - ''
+  - '&eSeu Cash: &6✪{cash}'
+  - ''
+  
+Saldo outros:
+  - ''
+  - '&eCash de {player}: &6✪{cash}'
+  - ''
+  
+Player invalido: '&cEste player não está online.'
+Voce mesmo: '&cVocê não pode enviar &fCash &cpara si.'
+Numero invalido: '&cO valor precisa ser maior que &f0&c.'
+Cash insuficiente: '&cVocê não tem &fCash &csuficiente para concluir está ação. &8(&c{necessario}&7/&a{cash}&8)'
+Pouco cash: '&cEste jogador não tem está quantia de &fCash&c.'
+
+Cash enviado:
+  - ''
+  - '&6&lCASH &8» &7Você &fenviou &6✪{quantia} &7de Cash para o jogador &e{player}&7.'
+  - ''
+
+Cash recebido:
+  - ''
+  - '&6&lCASH &8» &7Você &frecebeu &6✪{quantia} &7de Cash do jogador &e{player}&7.'
+  - ''
+  
+Cash adicionado: '&7Você &fadicionou &6✪{quantia} &7de Cash a conta do jogador &e{player}&7.'
+Cash removido: '&7Você &fremoveu &6✪{quantia} &7de Cash da conta do jogador &e{player}&7.'
+Cash setado: '&7Você &fdefiniu &7o Cash do jogador &e{player} &7para &6✪{quantia}&7.'
+
+Vale:
+  - ''
+  - '&6&lCASH &8» &7Você transformou &6✪{cash} &7de &fCash &7em &e{quantia} &7vale cash.'
+  - ''
+Vale givado: '&7Você &fdeu &e{quantia} &7vale Cash com &6✪{cash} &7de &fCash &7para o player &e{player}&7.'
+
+Stack vales:
+  - ''
+  - '&6&lCASH &8» &7Você &fstackou &7todos os &eVales Cash &7de seu inventário, em &f1 &7item com &6✪{quantia} &7de Cash.'
+  - ''
+  
+Vale ativado:
+  - ''
+  - '&6&lCASH &8» &7Você &fativou &e1 &7vale cash com &6✪{quantia} &7de Cash.'
+  - ''
+  
+Enviar vale:
+  - ''
+  - '&aDigite no chat o &fNick'
+  - '&ado jogador que você quer'
+  - '&aenviar seu &eVale Cash&a.'
+  - ''
+  - '&aQuantia: &6✪{cash} &eCash`s'
+  - ''
+  - '&7Caso queira &fcancelar&7, digite &ccancelar'
+  - ''
+  
+Acao cancelada:
+  - ''
+  - '&6&lCASH &8» &cAção cancelada com sucesso.'
+  - ''
+  
+Vale enviado:
+  - ''
+  - '&6&lCASH &8» &7Você &fenviou &7seu &eVale Cash &7com &6✪{quantia} &7de Cash, para o jogador &e{player}&7.'
+  - ''
+
+Vale recebido:
+  - ''
+  - '&6&lCASH &8» &7O jogador &e{player} &7te &fdoou &71 &eVale Cash &7com &6✪{quantia} &7de Cash.'
+  - ''
+  
+Categoria selecionada:
+  - ''
+  - '&6&lCASH &8» &7Você &fselecionou &7a &ecategoria &a{categoria} &7com sucesso.'
+  - ''
+
+Comandos:
+  - ''
+  - '&6&lCash &8» &eComandos'
+  - ''
+  - ' &e/cash &8» &7Ver seu cash'
+  - ' &e/cash ajuda &8» &7Ver está mensagem'
+  - ' &e/cash ver <player> &8» &7Ver o cash de outro jogador'
+  - ' &e/cash enviar <player> <quantia> &8» &7Enviar cash á um jogador'
+  - ' &e/cash vale <valor> <quantia> &8» &7Transforme uma quantia de cash em 1 papel'
+  - ' &e<command> &8» &7Abra o menu de compra'
+  - ''
+  
+Comandos admin:
+  - ''
+  - '&6&lCash &8» &eComandos'
+  - ''
+  - ' &e/cash &8» &7Ver seu cash'
+  - ' &e/cash ajuda &8» &7Ver está mensagem'
+  - ' &e/cash ver <player> &8» &7Ver o cash de outro jogador'
+  - ' &e/cash enviar <player> <quantia> &8» &7Enviar cash á um jogador'
+  - ' &e/cash vale <valor> <quantia> &8» &7Transforme uma quantia de cash em 1 papel'
+  - ' &e<command> &8» &7Abra o menu de compra'
+  - ' &c/cash add <player> <quantia> &8» &fAdicione cash á conta de um jogador'
+  - ' &c/cash remove <player> <quantia> &8» &fRetire cash da conta de um jogador'
+  - ' &c/cash set <player> <quantia> &8» &fDefina o cash de um jogador'
+  - ' &c/cash givevale <player> <valor> <quantia> &8» &fDê um vale cash á um jogador'
+  - ' &c/cash reload &8» &fRecarregue o plugin'
+  - ''
